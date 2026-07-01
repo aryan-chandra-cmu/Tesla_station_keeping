@@ -1,6 +1,6 @@
 # Underwater Vehicle Station-Keeping
 
-This project simulates a planar underwater vehicle holding position and heading under time-varying ocean currents. The controller is a PID station-keeping controller with force saturation and thrust slew-rate limits.
+This project simulates a planar underwater vehicle holding position and heading under time-varying ocean currents. The controller is a PID station-keeping controller with force saturation and thrust slew-rate limits. As an extension, a RL controller was also developed for the same task.
 
 ## Setup
 
@@ -107,7 +107,7 @@ PowerShell helper:
 
 ## Optional RL Curriculum
 
-The curriculum starts with a larger station box, small initial offsets, and weak current. It then increases the initial offset, tightens the box, and restores the full current profile.
+Because the full problem was too much to train in a single go,the curriculum starts with a larger station box, small initial offsets, and weak current. It then increases the initial offset, tightens the box, and restores the full current profile.
 
 ```powershell
 .\scripts\train_rl_curriculum.ps1
