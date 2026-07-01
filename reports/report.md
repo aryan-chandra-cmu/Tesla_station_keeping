@@ -46,7 +46,7 @@ The current field is treated as measured in the non-RL controller. This is a fav
 
 ### Classical Controller
 
-The primary controller is a PID station-keeping controller. The position loop behaves like a virtual spring-damper system:
+The first controller is a PID station-keeping controller. The position loop behaves like a virtual spring-damper system:
 
 ```text
 force = Kp * position error + Ki * accumulated error + Kd * velocity error
@@ -62,7 +62,7 @@ This approach was chosen because it is transparent and easy to debug. Each term 
 
 ### RL Control Pipeline
 
-The RL controller is included as an optional comparison. It uses the same basic station-keeping idea, but instead of manually specifying a PID law, the policy learns a mapping:
+The RL controller is included as an extension and comparison. It uses the same basic station-keeping idea, but instead of manually specifying a PID law, the policy learns a mapping:
 
 ```text
 state and current information -> thrust command
