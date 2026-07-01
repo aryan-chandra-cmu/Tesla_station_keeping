@@ -107,11 +107,11 @@ Three current conditions were tested: mild, strong, and reversing. Each scenario
 
 The main observation is that the controller converges quickly despite different current profiles. The early force spike is expected: the vehicle begins several meters away from the station, so the controller initially uses most of the available thrust to remove the large error. After the transient, the commands settle into smaller values that counteract the time-varying current.
 
-![Mild current station-keeping result](figures/mild_run.png)
+![Mild current station-keeping result](results/mild_run.png)
 
-![Strong current station-keeping result](figures/strong_run.png)
+![Strong current station-keeping result](results/strong_run.png)
 
-![Reversing current station-keeping result](figures/reversing_run.png)
+![Reversing current station-keeping result](results/reversing_run.png)
 
 The mild case settles to nearly zero position error. The strong and reversing cases retain a small residual error because the current disturbance is larger and time-varying, but both remain within the 0.25 m station-keeping tolerance after the initial transient. The yaw loop is much easier than the translational loop in this model because the current disturbance does not directly apply a yaw moment.
 
@@ -128,11 +128,11 @@ The curriculum-trained RL policy was evaluated at each stage and on the final St
 
 The Stage 1 result shows the policy learning the easiest version of the problem: staying inside a large station box with weak current. Stage 2 increases both initial error and current strength, and the policy still finishes inside the box. The Stage 3 rollout is the most important result because it uses the final tight station box and full disturbance range. It ends with 0.167 m position error and 0.050 m/s speed, which is inside the station box.
 
-![RL Stage 1 policy rollout](figures/rl_policy_path_stage1.png)
+![RL Stage 1 policy rollout](results/rl_policy_path_stage1.png)
 
-![RL Stage 2 policy rollout](figures/rl_policy_path_stage2.png)
+![RL Stage 2 policy rollout](results/rl_policy_path_stage2.png)
 
-![RL Stage 3 policy rollout](figures/rl_policy_path.png)
+![RL Stage 3 policy rollout](results/rl_policy_path.png)
 
 The maximum error in the RL plots is dominated by the starting offset, not by steady-state drift. The policy initially uses large thrust to remove the distance error, then drops to smaller commands once it reaches the station region. Compared with the classical PID controller, the RL controller is less smooth and uses more visibly discrete corrective actions, but it succeeds on the simplified 3D station-box task.
 
