@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "underwater-station-keeping"
+version = "0.1.0"
+description = "Underwater vehicle station-keeping controller with current disturbances"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "matplotlib>=3.8",
+]
+
+[project.scripts]
+usk-run = "underwaterStationKeeping.runScenario:main"
+usk-plot = "underwaterStationKeeping.plotResults:main"
+usk-train-rl = "underwaterStationKeeping.trainRl:main"
+usk-eval-rl = "underwaterStationKeeping.evalRl:main"
+usk-visualize-rl = "underwaterStationKeeping.visualizeRl:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

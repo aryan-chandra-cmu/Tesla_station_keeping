@@ -1,0 +1,19 @@
+{
+  "maxEpisodeSteps": 600,
+  "timeStep": 0.05,
+  "workspaceLimitM": 8.0,
+  "stationHalfSizeX": 0.25,
+  "stationHalfSizeY": 0.25,
+  "stationHalfSizeZ": 0.20,
+  "maxInitialOffsetM": 3.0,
+  "maxInitialSpeedMps": 0.2,
+  "maxCurrentMps": 0.45,
+  "baseCurrentX": 0.18,
+  "baseCurrentY": -0.10,
+  "baseCurrentZ": 0.0,
+  "gustAmplitudeX": 0.18,
+  "gustAmplitudeY": 0.14,
+  "gustAmplitudeZ": 0.05,
+  "maxForceN": 55.0,
+  "maxForceRateNPerS": 110.0
+}
